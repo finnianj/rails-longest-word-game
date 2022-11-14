@@ -1,0 +1,15 @@
+<div class="container text-center w-80 my-4">
+  <h1 class="title">Your Results:</h1>
+  <p>-----------------------------</p>
+  <div class="container my-4 results_box">
+
+    <h3>You guessed: </h3> <%= @result[:word]%>
+    <h3>Your time: </h3> <%= @result[:time]%>
+    <h3 class="score">Your score: <%= @result[:score]%> </h3>
+    <p><%= @result[:message]%></p>
+  </div>
+
+<%= link_to "Play again", new_path %>
+</div>
+
+<%# [:time] @result[:word] @result[:score] @result[:message] %>

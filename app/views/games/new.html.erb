@@ -1,0 +1,19 @@
+<div class="container text-center w-80 my-4">
+  <h1 class="title">New Game!</h1>
+  <p>-----------------------------</p>
+  <div class="grid_container my-4">
+    <% @letters.each do |letter| %>
+      <div class="grid_letter"><%=letter%></div>
+    <% end %>
+  </div>
+
+  <form action="/score" method="POST" data-turbo="false">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letter, @letters %>
+    <%= hidden_field_tag :start_time, @start_time %>
+    <input type="text" name="word" class="form-control my-4 w-50 mx-auto" placeholder="Enter your best guess...">
+    <input type="submit" value="Go!" class="btn btn-primary">
+  </form>
+
+
+</div>
